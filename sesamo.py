@@ -3,6 +3,9 @@
 import os
 import sys
 
+# Variaveis
+version = '0.0.1'
+
 # Funcoes
 
 def bro():
@@ -22,7 +25,7 @@ def bro5():
 
 def main():
     print('########################################')
-    print('#         Sesamo Version: 0.0.1        #')
+    print('#         Sesamo Version: %s        #' % version)
     print('########################################')
     print('#         Servers Disponíveis          #')
     print('########################################')
@@ -33,7 +36,7 @@ def main():
     print('#            5 - Bro5                  #')
     print('#            0 - Sair                  #')
     print('########################################')
-    print('#            Mantenedor: Peronium      #')
+    print('#        Mantenedor: Peronium          #')
     print('########################################')
     opt = input("Opção desejada: ")
 
