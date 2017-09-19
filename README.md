@@ -26,4 +26,9 @@ cd /usr/local/bin/
 chmod +x sesamo
 ```
 
+Configure access.ini.example and change the name:
+```bash
+mv -v access.ini.example access.ini
+```
+
 ### That's it folks!
