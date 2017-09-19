@@ -3,26 +3,33 @@
 import os
 import sys
 import time
+import configparser
+
+# ConfigParser configurate
+config = configparser.ConfigParser()
+config.read('config.ini')
 
 # Variaveis
-version = '0.0.1'
+version = config.get('SESAMO', 'version')
+username = config.get('AHGORA', 'user')
+hostname = config.get('AHGORA', 'host')
 
 # Funcoes
 
 def bro():
-    os.system('ssh pery@bro.ahgora.com.br')
+    os.system("ssh %s@bro.%s" % (username, hostname))
 
 def bro2():
-    os.system('ssh pery@bro2.ahgora.com.br')
+    os.system('ssh %s@bro2.%s' % (username, hostname))
 
 def bro3():
-    os.system('ssh pery@bro3.ahgora.com.br')
+    os.system('ssh %s@bro3.%s' % (username, hostname))
 
 def bro4():
-    os.system('ssh pery@bro4.ahgora.com.br')
+    os.system('ssh %s@bro4.%s' % (username, hostname))
 
 def bro5():
-    os.system('ssh pery@bro5.ahgora.com.br')
+    os.system('ssh %s@bro5.%s' % (username, hostname))
 
 # Funcao Principal
 def main():
