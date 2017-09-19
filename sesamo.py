@@ -2,6 +2,7 @@
 
 import os
 import sys
+import time
 
 # Variaveis
 version = '0.0.1'
@@ -23,9 +24,10 @@ def bro4():
 def bro5():
     os.system('ssh pery@bro5.ahgora.com.br')
 
+# Funcao Principal
 def main():
     print('########################################')
-    print('#         Sesamo Version: %s        #' % version)
+    print('#         Sésamo Version: %s        #' % version)
     print('########################################')
     print('#         Servers Disponíveis          #')
     print('########################################')
@@ -54,6 +56,7 @@ def main():
         print('Bye!')
         sys.exit(0)
     else:
+        os.system('clear')
         print("Opção inválida. Tente novamente!")
         main()
 
@@ -66,5 +69,6 @@ if __name__ == '__main__':
         sys.exit(0)
     except(KeyboardInterrupt):
         print('')
-        print('Bye!')
-        sys.exit(0)
+        print('Você executou um comando inválido. Sésamo fechando!')
+        time.sleep(1)
+        sys.exit(1)
