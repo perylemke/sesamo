@@ -1,4 +1,6 @@
-[EXEMPLO]
-
+[AHGORA]
 user=example
 host=xyx.com.br
+
+[SESAMO]
+version=0.0.2
