@@ -7,7 +7,7 @@ import configparser
 
 # ConfigParser configurate
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read('/etc/sesamo.ini')
 
 # Variaveis
 version = config.get('SESAMO', 'version')
