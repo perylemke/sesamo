@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
-import os
-import sys
-import time
-import configparser
+import os, sys, time, configparser
 
 # ConfigParser configurate
 config = configparser.ConfigParser()
