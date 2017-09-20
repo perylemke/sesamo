@@ -31,6 +31,18 @@ def bro4():
 def bro5():
     os.system('ssh %s@bro5.%s' % (username, hostname))
 
+def mapa():
+    vpn = config.get('MAPA', 'dns')
+    user_mapa = config.get('MAPA', 'user_mapa')
+    host_mapa = config.get('MAPA', 'host_mapa')
+    is_connected = os.system('ifconfig %s > /dev/null 2>&1' % vpn)
+
+    if is_connected == 0:
+        os.system('ssh %s@%s' % (user_mapa, host_mapa))
+    else:
+        print("VPN não está conectada ou houve alteração na configração. Favor verificar e tente novamente!")
+        sys.exit(2)
+
 # Funcao para o menu(Front)
 def menu():
     print('########################################')
@@ -43,6 +55,7 @@ def menu():
     print('#            3 - Bro3                  #')
     print('#            4 - Bro4                  #')
     print('#            5 - Bro5                  #')
+    print('#            6 - Mapa                  #')
     print('#            0 - Sair                  #')
     print('########################################')
     print('#        Mantenedor: Peronium          #')
@@ -64,6 +77,8 @@ def main():
         bro4()
     elif opt == '5':
         bro5()
+    elif opt == '6':
+        mapa()
     elif opt == '0':
         print('Bye!')
         sys.exit(0)
