@@ -31,8 +31,8 @@ def bro4():
 def bro5():
     os.system('ssh %s@bro5.%s' % (username, hostname))
 
-# Funcao Principal
-def main():
+# Funcao para o menu(Front)
+def menu():
     print('########################################')
     print('#         Sésamo Version: %s        #' % version)
     print('########################################')
@@ -47,6 +47,11 @@ def main():
     print('########################################')
     print('#        Mantenedor: Peronium          #')
     print('########################################')
+
+# Funcao Principal
+def main():
+    menu()
+
     opt = input("Opção desejada: ")
 
     if opt == '1':
