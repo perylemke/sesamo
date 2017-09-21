@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import os, sys, time, configparser
+import os, sys, time, configparser, getpass
 
 # ConfigParser configurate
 config = configparser.ConfigParser()
@@ -12,6 +12,15 @@ username = config.get('AHGORA', 'user')
 hostname = config.get('AHGORA', 'host')
 
 # Funcoes
+
+def verify_user():
+    user = getpass.getuser()
+
+    if user == 'root':
+        print("Você está acessando com o usuário %s. Favor acessar com seu usuário." % user)
+        sys.exit(3)
+    else:
+        pass
 
 def bro():
     os.system("ssh %s@bro.%s" % (username, hostname))
@@ -86,6 +95,7 @@ def main():
 
 if __name__ == '__main__':
     try:
+        verify_user()
         main()
     except(Exception):
         print('')
