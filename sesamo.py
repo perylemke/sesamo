@@ -6,13 +6,12 @@ import os, sys, time, configparser, getpass
 config = configparser.ConfigParser()
 config.read('/etc/sesamo.ini')
 
-# Variaveis
+# Global variables
 version = config.get('SESAMO', 'version')
 username = config.get('AHGORA', 'user')
 hostname = config.get('AHGORA', 'host')
 
-# Funcoes
-
+# Functions
 def verify_user():
     user = getpass.getuser()
 
@@ -49,7 +48,13 @@ def mapa():
         print("VPN não está conectada ou houve alteração na configração. Favor verificar e tente novamente!")
         sys.exit(2)
 
-# Funcao para o menu(Front)
+def deploy():
+    os.system('ssh %s@deploy.%s' % (username, hostname))
+
+def arb():
+    os.system('ssh %s@arb.%s' % (username, hostname))
+
+# Front function
 def menu():
     print('########################################')
     print('#         Sésamo Version: %s        #' % version)
@@ -62,13 +67,17 @@ def menu():
     print('#            4 - Bro4                  #')
     print('#            5 - Bro5                  #')
     print('#            6 - Mapa                  #')
+    print('#            7 - Deploy (Gitlab)       #')
+    print('#            8 - Arb (Gitlab)          #')
     print('#            0 - Sair                  #')
     print('########################################')
     print('#        Mantenedor: Peronium          #')
     print('########################################')
 
-# Funcao Principal
+# Main function - C Like :)
 def main():
+    verify_user()
+
     menu()
 
     opt = input("Opção desejada: ")
@@ -85,6 +94,10 @@ def main():
         bro5()
     elif opt == '6':
         mapa()
+    elif opt == '7':
+        deploy()
+    elif opt == '8':
+        arb()
     elif opt == '0':
         print('Bye!')
         sys.exit(0)
@@ -95,7 +108,6 @@ def main():
 
 if __name__ == '__main__':
     try:
-        verify_user()
         main()
     except(Exception):
         print('')
