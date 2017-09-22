@@ -1,3 +1,5 @@
+![Sesamo](img/sesamo.png)
+
 **Sésamo**
 ===================
 Sésamo is a simple python script to access a Ahgora servers.
@@ -28,7 +30,12 @@ chmod +x sesamo
 
 Configure access.ini.example and change the name:
 ```bash
-mv -v access.ini.example access.ini
+sudo mv -v sesamo.ini.example /etc/sesamo.ini
+```
+
+To execute is a just simple command:
+```bash
+sesamo
 ```
 
 ### That's it folks!
