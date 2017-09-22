@@ -54,6 +54,12 @@ def deploy():
 def arb():
     os.system('ssh %s@arb.%s' % (username, hostname))
 
+def depen():
+    user_depen = config.get('DEPEN', 'usr_depen')
+    pass_depen = config.get('DEPEN', 'passwd')
+
+    os.system("rdesktop -g 1500x1024 -k pt-br  -u %s -p '%s' ec2-54-207-50-146.sa-east-1.compute.amazonaws.com" % (user_depen, pass_depen))
+
 # Front function
 def menu():
     print('########################################')
@@ -69,6 +75,7 @@ def menu():
     print('#            6 - Mapa                  #')
     print('#            7 - Deploy (Gitlab)       #')
     print('#            8 - Arb (Gitlab)          #')
+    print('#            9 - Depen                 #')
     print('#            0 - Sair                  #')
     print('########################################')
     print('#        Mantenedor: Peronium          #')
@@ -98,6 +105,8 @@ def main():
         deploy()
     elif opt == '8':
         arb()
+    elif opt == '9':
+        depen()
     elif opt == '0':
         print('Bye!')
         sys.exit(0)
