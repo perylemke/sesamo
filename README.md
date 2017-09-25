@@ -28,9 +28,10 @@ cd /usr/local/bin/
 chmod +x sesamo
 ```
 
-Configure access.ini.example and change the name:
+Configure sesamo.ini.example and change the name:
 ```bash
-sudo mv -v sesamo.ini.example /etc/sesamo.ini
+mkdir $HOME/.config/sesamo/
+sudo mv -v sesamo.ini.example $HOME/.config/sesamo/sesamo.ini
 ```
 
 To execute is a just simple command:
