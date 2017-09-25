@@ -3,8 +3,9 @@
 import os, sys, time, configparser, getpass
 
 # ConfigParser configurate
+home = os.environ['HOME']
 config = configparser.ConfigParser()
-config.read('/etc/sesamo.ini')
+config.read('%s/.config/sesamo/sesamo.ini' % home)
 
 # Global variables
 version = config.get('SESAMO', 'version')
