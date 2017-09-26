@@ -64,6 +64,12 @@ def depen():
 def qst():
     os.system('ssh %s@qst.%s' % (username, hostname))
 
+def bastion():
+    user_bast = config.get('BASTION', 'usr_bastion')
+    host_bast = config.get('BASTION', 'host_bastion')
+
+    os.system('ssh %s@%s' % (user_bast, host_bast))
+
 # Front function
 def menu():
     print('########################################')
@@ -81,6 +87,7 @@ def menu():
     print('#            8 - Arb (Gitlab)          #')
     print('#            9 - Depen                 #')
     print('#            10 - Qst                  #')
+    print('#            11 - Bastion              #')
     print('#            0 - Sair                  #')
     print('########################################')
     print('#        Mantenedor: Peronium          #')
@@ -114,6 +121,8 @@ def main():
         depen()
     elif opt == '10':
         qst()
+    elif opt == '11':
+        bastion()
     elif opt == '0':
         print('Bye!')
         sys.exit(0)
