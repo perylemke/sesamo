@@ -70,6 +70,16 @@ def bastion():
 
     os.system('ssh %s@%s' % (user_bast, host_bast))
 
+def config_server():
+    os.system('ssh %s@config.%s' % (username, hostname))
+
+def config_server2():
+    os.system('ssh %s@config2.%s' % (username, hostname))
+
+def aws():
+    host_aws = config.get('BASTION_AWS', 'host_aws')
+    os.system('ssh -A %s@%s' % (username, host_aws))
+
 # Front function
 def menu():
     print('########################################')
@@ -87,7 +97,10 @@ def menu():
     print('#            8 - Arb (Gitlab)          #')
     print('#            9 - Depen                 #')
     print('#            10 - Qst                  #')
-    print('#            11 - Bastion              #')
+    print('#            11 - Bastion (OC)         #')
+    print('#            12 - Config               #')
+    print('#            13 - Config2              #')
+    print('#            14 - Bastion (AWS)        #')
     print('#            0 - Sair                  #')
     print('########################################')
     print('#        Mantenedor: Peronium          #')
@@ -123,6 +136,12 @@ def main():
         qst()
     elif opt == '11':
         bastion()
+    elif opt == '12':
+        config_server()
+    elif opt == '13':
+        config_server2()
+    elif opt == '14':
+        aws()
     elif opt == '0':
         print('Bye!')
         sys.exit(0)
