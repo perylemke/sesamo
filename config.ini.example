@@ -1,0 +1,14 @@
+# Arquivo de configuração do Sesamo.
+#
+# Exemplo:
+#
+# [SERVER]
+# ssh=teste@ip
+#
+# Observação:
+#
+# Manter nesse padrão para funciomanento
+# da aplicação.
+########################################
+[SERVER]
+ssh=teste@teste.com.br
