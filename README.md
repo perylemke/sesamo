@@ -2,41 +2,45 @@
 
 **Sésamo**
 ===================
-Sésamo is a simple python script to access a Ahgora servers.
+Sésamo is a simple python script to access a many.
 
-Why? I'm study Python and I need a challenge to do.
+Why? I'm study Python and I'm a Lazy SysAdmin.
 
 ### ToDo's
 
 - Writing tests.
 - Improve the code
-- Adding more servers
 - Adding a PiPy libary
 
 ### How to use
 
 Clone the Bitbucket repo:
 ```bash
-git clone git@bitbucket.org:perylemke/sesamo.git
+git clone https://perylemke@bitbucket.org/perylemke/sesamo.git
 ```
 
-Transform a executable (with a Sudo permission):
+Execute the Install script:
 ```bash
 cd sesamo
-cp -pv sesamo.py /usr/local/bin/sesamo
-cd /usr/local/bin/
-chmod +x sesamo
+./install.sh
 ```
 
-Configure sesamo.ini.example and change the name:
+Configure config.ini:
 ```bash
-mkdir $HOME/.config/sesamo/
-sudo mv -v sesamo.ini.example $HOME/.config/sesamo/sesamo.ini
+vim $HOME/.config/sesamo/config.ini
+```
+
+Example to configurate:
+```
+[SERVER]
+ssh=user@host
 ```
 
 To execute is a just simple command:
 ```bash
 sesamo
 ```
+
+Feedbacks are welcome and if you have a improvement fork us and pull us! :)
 
 ### That's it folks!

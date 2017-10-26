@@ -24,7 +24,7 @@ def connect_server(opt):
 
 def front():
     print("""
-*** Bem vindo ao Sesamo ***
+*** Bem vindo ao Sésamo ***
 
 Escolha o server que você deseja acessar:
     """)
