@@ -16,13 +16,7 @@ Why? I'm study Python and I'm a Lazy SysAdmin.
 
 Clone the repo:
 ```bash
-git clone https://github.com/perylemke/sesamo.git
-```
-
-Execute the Install script:
-```bash
-cd sesamo
-./install.sh
+pip install git+https://github.com/perylemke/sesamo.git
 ```
 
 Configure config.ini:
