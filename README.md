@@ -14,15 +14,16 @@ Why? I'm study Python and I'm a Lazy SysAdmin.
 
 ### How to use
 
-Clone the repo:
+Clone the repo and access Sesamo folder:
 ```bash
 git clone https://github.com/perylemke/sesamo.git
+cd sesamo
 ```
 
-Execute the Install script:
+Execute make to configure and install:
 ```bash
-cd sesamo
-./install.sh
+make config
+make install
 ```
 
 Configure config.ini:
