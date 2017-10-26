@@ -41,6 +41,7 @@ Escolha o server que você deseja acessar:
     print("")
 
 def main():
+    verify_user()
     front()
     host = input("Opção desejada: ")
 
@@ -62,7 +63,6 @@ def main():
 
 if __name__ == '__main__':
     try:
-        verify_user()
         main()
     except(Exception):
         print('')
