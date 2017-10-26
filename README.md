@@ -2,7 +2,7 @@
 
 **Sésamo**
 ===================
-Sésamo is a simple python script to access a many.
+Sésamo is a simple python script to concentrate a many servers to access.
 
 Why? I'm study Python and I'm a Lazy SysAdmin.
 
@@ -16,7 +16,7 @@ Why? I'm study Python and I'm a Lazy SysAdmin.
 
 Clone the Bitbucket repo:
 ```bash
-git clone https://perylemke@bitbucket.org/perylemke/sesamo.git
+git clone https://github.com/perylemke/sesamo.git
 ```
 
 Execute the Install script:
