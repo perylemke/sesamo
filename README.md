@@ -14,7 +14,7 @@ Why? I'm study Python and I'm a Lazy SysAdmin.
 
 ### How to use
 
-Clone the Bitbucket repo:
+Clone the repo:
 ```bash
 git clone https://github.com/perylemke/sesamo.git
 ```
