@@ -10,7 +10,7 @@ Why? I'm study Python and I'm a Lazy SysAdmin.
 
 - Writing tests.
 - Improve the code
-- Adding a PiPy libary
+- Adding a PyPi libary
 
 ### How to use
 
