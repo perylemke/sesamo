@@ -40,7 +40,7 @@ Escolha o server que você deseja acessar:
     print("0 - Sair")
     print("")
 
-def run():
+def main():
     should_exit = False
 
     while not should_exit:
@@ -63,9 +63,9 @@ def run():
             os.system('clear')
             print ("Somente números são permitidos. Tente novamente.")
 
-def main():
+if __name__ == '__main__':
     try:
-        run()
+        main()
     except(Exception):
         print('')
         print('Bye!')
@@ -75,6 +75,3 @@ def main():
         print('Você executou um comando inválido. Sésamo fechando!')
         time.sleep(1)
         sys.exit(1)
-
-if __name__ == '__main__':
-    main()
