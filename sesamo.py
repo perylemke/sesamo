@@ -41,25 +41,27 @@ Escolha o server que você deseja acessar:
     print("")
 
 def main():
-    verify_user()
-    front()
-    host = input("Opção desejada: ")
+    should_exit = False
 
-    if host.isdigit():
-        if host != '0':
-            try:
-                connect_server(host)
-            except(IndexError):
-                os.system('clear')
-                print("Opção inexistente. Tente novamente.")
-                main()
+    while not should_exit:
+        verify_user()
+        front()
+        host = input("Opção desejada: ")
+        if host.isdigit():
+            if host != '0':
+                try:
+                    should_exit = True
+                    connect_server(host)
+                except(IndexError):
+                    should_exit = False
+                    os.system('clear')
+                    print("Opção inexistente. Tente novamente.")
+            else:
+                print("Bye!")
+                sys.exit(0)
         else:
-            print("Bye!")
-            sys.exit(0)
-    else:
-        os.system('clear')
-        print ("Somente números são permitidos. Tente novamente.")
-        main()
+            os.system('clear')
+            print ("Somente números são permitidos. Tente novamente.")
 
 if __name__ == '__main__':
     try:
