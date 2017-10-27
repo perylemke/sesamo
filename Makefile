@@ -3,7 +3,7 @@ BIN_DIR = /usr/local/bin
 
 config:
 	mkdir -p $(CONFIG_DIR)
-	cp -pv config.ini.example $(CONFIG_DIR)/config.ini
+	mv -v config.ini.example $(CONFIG_DIR)/config.ini
 
 install:
 	sudo cp -pv sesamo.py $(BIN_DIR)/sesamo
