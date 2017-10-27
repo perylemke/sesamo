@@ -37,8 +37,7 @@ Escolha o server que você deseja acessar:
 
         n = n + 1
 
-    print("0 - Sair")
-    print("")
+    print("0 - Sair\n")
 
 def run():
     should_exit = False
