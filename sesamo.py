@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import os, sys, time, configparser, getpass
+import os, sys, time, configparser, getpass, subprocess
 
 # ConfigParser start
 home = os.environ['HOME']
@@ -20,7 +20,7 @@ def verify_user():
 def connect_server(opt):
     choice = int(opt) - 1
     ssh = config[servers[choice]]['ssh']
-    os.system('ssh %s' % ssh)
+    subprocess.run(['ssh %s' % ssh], shell=True, check=True)
 
 def front():
     print("""
