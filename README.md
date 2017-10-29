@@ -8,9 +8,18 @@ Why? I'm study Python and I'm a Lazy SysAdmin.
 
 ### ToDo's
 
-- Writing tests.
-- Improve the code
-- Adding a PyPi libary
+* Writing tests.
+* Improve the code
+* Adding a PyPi libary
+
+### Libs
+
+* os
+* sys
+* time
+* configparser
+* getpass
+* subprocess
 
 ### How to use
 
