@@ -23,30 +23,30 @@ Why? I'm study Python and I'm a Lazy SysAdmin.
 
 ### How to use
 
-Clone the repo and access Sesamo folder:
+* Clone the repo and access Sesamo folder:
 ```bash
 git clone https://github.com/perylemke/sesamo.git
 cd sesamo
 ```
 
-Execute make to configure and install:
+* Execute make to configure and install:
 ```bash
 make config
 make install
 ```
 
-Configure config.ini:
+* Configure config.ini:
 ```bash
 vim $HOME/.config/sesamo/config.ini
 ```
 
-Example to configurate:
+* Example to configurate:
 ```
 [SERVER]
 ssh=user@host
 ```
 
-To execute is a just simple command:
+* To execute is a just simple command:
 ```bash
 sesamo
 ```
