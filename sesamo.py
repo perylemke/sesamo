@@ -53,13 +53,13 @@ def run():
                     connect_server(host)
                 except(IndexError):
                     should_exit = False
-                    os.system('clear')
+                    subprocess.run(['clear'], shell=True, check=True)
                     print("Opção inexistente. Tente novamente.")
             else:
                 print("Bye!")
                 sys.exit(0)
         else:
-            os.system('clear')
+            subprocess.run(['clear'], shell=True, check=True)
             print ("Somente números são permitidos. Tente novamente.")
 
 def main():
