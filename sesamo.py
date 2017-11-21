@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import os, sys, time, configparser, getpass, subprocess
+import os, sys, time, configparser, getpass
 
 # ConfigParser start
 home = os.environ['HOME']
@@ -20,7 +20,7 @@ def verify_user():
 def connect_server(opt):
     choice = int(opt) - 1
     ssh = config[servers[choice]]['ssh']
-    subprocess.run(['ssh %s' % ssh], shell=True, check=True)
+    os.system('ssh %s' % ssh)
 
 def front():
     print("""
@@ -53,13 +53,13 @@ def run():
                     connect_server(host)
                 except(IndexError):
                     should_exit = False
-                    subprocess.run(['clear'], shell=True, check=True)
+                    os.system('clear')
                     print("Opção inexistente. Tente novamente.")
             else:
                 print("Bye!")
                 sys.exit(0)
         else:
-            subprocess.run(['clear'], shell=True, check=True)
+            os.system('clear')
             print ("Somente números são permitidos. Tente novamente.")
 
 def main():
