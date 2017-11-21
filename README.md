@@ -19,7 +19,6 @@ Why? I'm study Python and I'm a Lazy SysAdmin.
 * time
 * configparser
 * getpass
-* subprocess
 
 ### How to use
 
