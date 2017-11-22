@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
-import os, sys, time, configparser, getpass
+import os
+import sys
+import time
+import configparser
+import getpass
 
 # ConfigParser start
 def get_config():
@@ -9,7 +13,7 @@ def get_config():
     config.read('%s/.config/sesamo/config.ini' % home)
     # Catch sections
     servers = config.sections()
-    return servers
+    return servers, config
 
 def verify_user():
         user = getpass.getuser()
@@ -18,7 +22,7 @@ def verify_user():
             print("Você está acessando com o usuário %s. Favor acessar com seu usuário." % user)
             sys.exit(3)
 
-def connect_server(opt):
+def connect_server(opt, servers, config):
     choice = int(opt) - 1
     ssh = config[servers[choice]]['ssh']
     os.system('ssh %s' % ssh)
@@ -44,7 +48,7 @@ def run():
     should_exit = False
 
     while not should_exit:
-        servers = get_config()
+        servers, config = get_config()
         verify_user()
         front(servers)
         host = input("Opção desejada: ")
@@ -52,7 +56,7 @@ def run():
             if host != '0':
                 try:
                     should_exit = True
-                    connect_server(host)
+                    connect_server(host, servers, config)
                 except(IndexError):
                     should_exit = False
                     os.system('clear')
