@@ -15,6 +15,9 @@ def get_config():
     servers = config.sections()
     return servers, config
 
+# Catch sections
+servers = config.sections()
+
 def verify_user():
         user = getpass.getuser()
 
@@ -27,7 +30,7 @@ def connect_server(opt, servers, config):
     ssh = config[servers[choice]]['ssh']
     os.system('ssh %s' % ssh)
 
-def front(servers):
+def front():
     print("""
 *** Bem vindo ao Sésamo ***
 
@@ -50,7 +53,7 @@ def run():
     while not should_exit:
         servers, config = get_config()
         verify_user()
-        front(servers)
+        front()
         host = input("Opção desejada: ")
         if host.isdigit():
             if host != '0':
