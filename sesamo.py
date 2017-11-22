@@ -15,9 +15,6 @@ def get_config():
     servers = config.sections()
     return servers, config
 
-# Catch sections
-servers = config.sections()
-
 def verify_user():
         user = getpass.getuser()
 
