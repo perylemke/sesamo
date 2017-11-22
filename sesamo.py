@@ -3,13 +3,12 @@
 import os, sys, time, configparser, getpass
 
 # ConfigParser start
-def get_config():
-    home = os.environ['HOME']
-    config = configparser.ConfigParser()
-    config.read('%s/.config/sesamo/config.ini' % home)
-    # Catch sections
-    servers = config.sections()
-    return servers
+home = os.environ['HOME']
+config = configparser.ConfigParser()
+config.read('%s/.config/sesamo/config.ini' % home)
+
+# Catch sections
+servers = config.sections()
 
 def verify_user():
         user = getpass.getuser()
@@ -23,7 +22,7 @@ def connect_server(opt):
     ssh = config[servers[choice]]['ssh']
     os.system('ssh %s' % ssh)
 
-def front(servers):
+def front():
     print("""
 *** Bem vindo ao Sésamo ***
 
@@ -44,9 +43,8 @@ def run():
     should_exit = False
 
     while not should_exit:
-        servers = get_config()
         verify_user()
-        front(servers)
+        front()
         host = input("Opção desejada: ")
         if host.isdigit():
             if host != '0':
